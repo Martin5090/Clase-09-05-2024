@@ -2,7 +2,7 @@ import { getPersonajes } from './peticiones/getPersonajes.js';
 
 
 
-const enviarDatos = (id , name , image, species , status,) => {
+const enviarDatos = (id , name , image, species , status) => {
     
 
     const rutaArchivoHTML = "../personaje.html";
@@ -11,7 +11,7 @@ const enviarDatos = (id , name , image, species , status,) => {
         .then(response => response.text())
         .then((html) => {
 
-            const parser = DOMParser();
+            const parser = new DOMParser();
             const doc = parser.parseFromString(html,"text/html");
         
             const imagePage = doc.getElementById("imagePage");
